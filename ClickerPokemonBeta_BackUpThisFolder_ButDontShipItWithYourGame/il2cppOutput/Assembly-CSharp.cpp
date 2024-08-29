@@ -3919,18 +3919,16 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CNoMusicTransfertU3Ed__6__ctor_mFF6A59
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* MusicManager_NoMusicTransfert_m4977E7E4324CC4A7F3A6E12A6CA3A1CEDAE503AA (MusicManager_t50343E4230B62B127D8AA186232F1B8D0FF38FDC* __this, const RuntimeMethod* method) ;
 // UnityEngine.Coroutine UnityEngine.MonoBehaviour::StartCoroutine(System.Collections.IEnumerator)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* MonoBehaviour_StartCoroutine_m4CAFF732AA28CD3BDC5363B44A863575530EC812 (MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71* __this, RuntimeObject* ___routine0, const RuntimeMethod* method) ;
-// System.Void UnityEngine.AudioSource::set_clip(UnityEngine.AudioClip)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AudioSource_set_clip_mFF441895E274286C88D9C75ED5CA1B1B39528D70 (AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* __this, AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* ___value0, const RuntimeMethod* method) ;
-// System.Void UnityEngine.AudioSource::Play()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AudioSource_Play_m95DF07111C61D0E0F00257A00384D31531D590C3 (AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* __this, const RuntimeMethod* method) ;
+// System.Collections.IEnumerator MusicManager::ChangeMusic(UnityEngine.AudioClip)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* MusicManager_ChangeMusic_m15031195B144DA14EA3CD35F2B023856E04B30A6 (MusicManager_t50343E4230B62B127D8AA186232F1B8D0FF38FDC* __this, AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* ___currentClipIn0, const RuntimeMethod* method) ;
 // System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Object_op_Equality_mD3DB0D72CE0250C84033DC2A90AEF9D59896E536 (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C* ___x0, Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C* ___y1, const RuntimeMethod* method) ;
 // System.Boolean System.String::op_Inequality(System.String,System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool String_op_Inequality_m0FBE5AC4931D312E5B347BAA603755676E6DA2FE (String_t* ___a0, String_t* ___b1, const RuntimeMethod* method) ;
-// System.Single UnityEngine.AudioSource::get_volume()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float AudioSource_get_volume_m9CCF33BC636562EA282FDE07463B547D70134EE3 (AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* __this, const RuntimeMethod* method) ;
-// System.Void UnityEngine.AudioSource::set_volume(System.Single)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AudioSource_set_volume_mD902BBDBBDE0E3C148609BF3C05096148E90F2C0 (AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* __this, float ___value0, const RuntimeMethod* method) ;
+// System.Void UnityEngine.AudioSource::set_clip(UnityEngine.AudioClip)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AudioSource_set_clip_mFF441895E274286C88D9C75ED5CA1B1B39528D70 (AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* __this, AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* ___value0, const RuntimeMethod* method) ;
+// System.Void UnityEngine.AudioSource::Play()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AudioSource_Play_m95DF07111C61D0E0F00257A00384D31531D590C3 (AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* __this, const RuntimeMethod* method) ;
 // System.Void System.NotSupportedException::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NotSupportedException__ctor_m1398D0CDE19B36AA3DE9392879738C1EA2439CDF (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* __this, const RuntimeMethod* method) ;
 // T UnityEngine.GameObject::GetComponent<ChooseStarter>()
@@ -8386,22 +8384,15 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MusicManager_noMusic_m83034C9AF4263A52C8
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MusicManager_Route1Et2_m64CB5855B637195B6397C1A53D7A0BDFA13222DB (MusicManager_t50343E4230B62B127D8AA186232F1B8D0FF38FDC* __this, const RuntimeMethod* method) 
 {
 	{
-		// objetMusic.Stop();
-		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_0 = __this->___objetMusic_4;
+		// StartCoroutine(ChangeMusic(music[0]));
+		AudioClipU5BU5D_t916722468F7EDCFA833318C35CD7D41097D75D31* L_0 = __this->___music_5;
 		NullCheck(L_0);
-		AudioSource_Stop_m318F17F17A147C77FF6E0A5A7A6BE057DB90F537(L_0, NULL);
-		// objetMusic.clip = music[0];
-		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_1 = __this->___objetMusic_4;
-		AudioClipU5BU5D_t916722468F7EDCFA833318C35CD7D41097D75D31* L_2 = __this->___music_5;
-		NullCheck(L_2);
-		int32_t L_3 = 0;
-		AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* L_4 = (L_2)->GetAt(static_cast<il2cpp_array_size_t>(L_3));
-		NullCheck(L_1);
-		AudioSource_set_clip_mFF441895E274286C88D9C75ED5CA1B1B39528D70(L_1, L_4, NULL);
-		// objetMusic.Play();
-		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_5 = __this->___objetMusic_4;
-		NullCheck(L_5);
-		AudioSource_Play_m95DF07111C61D0E0F00257A00384D31531D590C3(L_5, NULL);
+		int32_t L_1 = 0;
+		AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* L_2 = (L_0)->GetAt(static_cast<il2cpp_array_size_t>(L_1));
+		RuntimeObject* L_3;
+		L_3 = MusicManager_ChangeMusic_m15031195B144DA14EA3CD35F2B023856E04B30A6(__this, L_2, NULL);
+		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_4;
+		L_4 = MonoBehaviour_StartCoroutine_m4CAFF732AA28CD3BDC5363B44A863575530EC812(__this, L_3, NULL);
 		// }
 		return;
 	}
@@ -8410,22 +8401,15 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MusicManager_Route1Et2_m64CB5855B637195B
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MusicManager_ForetJade_m8436258C3012CB9A2A46B693AEDF526F058B6A30 (MusicManager_t50343E4230B62B127D8AA186232F1B8D0FF38FDC* __this, const RuntimeMethod* method) 
 {
 	{
-		// objetMusic.Stop();
-		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_0 = __this->___objetMusic_4;
+		// StartCoroutine(ChangeMusic(music[1]));
+		AudioClipU5BU5D_t916722468F7EDCFA833318C35CD7D41097D75D31* L_0 = __this->___music_5;
 		NullCheck(L_0);
-		AudioSource_Stop_m318F17F17A147C77FF6E0A5A7A6BE057DB90F537(L_0, NULL);
-		// objetMusic.clip = music[1];
-		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_1 = __this->___objetMusic_4;
-		AudioClipU5BU5D_t916722468F7EDCFA833318C35CD7D41097D75D31* L_2 = __this->___music_5;
-		NullCheck(L_2);
-		int32_t L_3 = 1;
-		AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* L_4 = (L_2)->GetAt(static_cast<il2cpp_array_size_t>(L_3));
-		NullCheck(L_1);
-		AudioSource_set_clip_mFF441895E274286C88D9C75ED5CA1B1B39528D70(L_1, L_4, NULL);
-		// objetMusic.Play();
-		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_5 = __this->___objetMusic_4;
-		NullCheck(L_5);
-		AudioSource_Play_m95DF07111C61D0E0F00257A00384D31531D590C3(L_5, NULL);
+		int32_t L_1 = 1;
+		AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* L_2 = (L_0)->GetAt(static_cast<il2cpp_array_size_t>(L_1));
+		RuntimeObject* L_3;
+		L_3 = MusicManager_ChangeMusic_m15031195B144DA14EA3CD35F2B023856E04B30A6(__this, L_2, NULL);
+		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_4;
+		L_4 = MonoBehaviour_StartCoroutine_m4CAFF732AA28CD3BDC5363B44A863575530EC812(__this, L_3, NULL);
 		// }
 		return;
 	}
@@ -8434,22 +8418,15 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MusicManager_ForetJade_m8436258C3012CB9A
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MusicManager_MontSelenite_m002B4BD2537BABEFBD2255ACC230F7F529F55D9E (MusicManager_t50343E4230B62B127D8AA186232F1B8D0FF38FDC* __this, const RuntimeMethod* method) 
 {
 	{
-		// objetMusic.Stop();
-		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_0 = __this->___objetMusic_4;
+		// StartCoroutine(ChangeMusic(music[2]));
+		AudioClipU5BU5D_t916722468F7EDCFA833318C35CD7D41097D75D31* L_0 = __this->___music_5;
 		NullCheck(L_0);
-		AudioSource_Stop_m318F17F17A147C77FF6E0A5A7A6BE057DB90F537(L_0, NULL);
-		// objetMusic.clip = music[2];
-		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_1 = __this->___objetMusic_4;
-		AudioClipU5BU5D_t916722468F7EDCFA833318C35CD7D41097D75D31* L_2 = __this->___music_5;
-		NullCheck(L_2);
-		int32_t L_3 = 2;
-		AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* L_4 = (L_2)->GetAt(static_cast<il2cpp_array_size_t>(L_3));
-		NullCheck(L_1);
-		AudioSource_set_clip_mFF441895E274286C88D9C75ED5CA1B1B39528D70(L_1, L_4, NULL);
-		// objetMusic.Play();
-		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_5 = __this->___objetMusic_4;
-		NullCheck(L_5);
-		AudioSource_Play_m95DF07111C61D0E0F00257A00384D31531D590C3(L_5, NULL);
+		int32_t L_1 = 2;
+		AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* L_2 = (L_0)->GetAt(static_cast<il2cpp_array_size_t>(L_1));
+		RuntimeObject* L_3;
+		L_3 = MusicManager_ChangeMusic_m15031195B144DA14EA3CD35F2B023856E04B30A6(__this, L_2, NULL);
+		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_4;
+		L_4 = MonoBehaviour_StartCoroutine_m4CAFF732AA28CD3BDC5363B44A863575530EC812(__this, L_3, NULL);
 		// }
 		return;
 	}
@@ -8458,22 +8435,15 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MusicManager_MontSelenite_m002B4BD2537BA
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MusicManager_Route4_mE047A122DC31BBB9E8C775B47DD6323813BF7CF4 (MusicManager_t50343E4230B62B127D8AA186232F1B8D0FF38FDC* __this, const RuntimeMethod* method) 
 {
 	{
-		// objetMusic.Stop();
-		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_0 = __this->___objetMusic_4;
+		// StartCoroutine(ChangeMusic(music[3]));
+		AudioClipU5BU5D_t916722468F7EDCFA833318C35CD7D41097D75D31* L_0 = __this->___music_5;
 		NullCheck(L_0);
-		AudioSource_Stop_m318F17F17A147C77FF6E0A5A7A6BE057DB90F537(L_0, NULL);
-		// objetMusic.clip = music[3];
-		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_1 = __this->___objetMusic_4;
-		AudioClipU5BU5D_t916722468F7EDCFA833318C35CD7D41097D75D31* L_2 = __this->___music_5;
-		NullCheck(L_2);
-		int32_t L_3 = 3;
-		AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* L_4 = (L_2)->GetAt(static_cast<il2cpp_array_size_t>(L_3));
-		NullCheck(L_1);
-		AudioSource_set_clip_mFF441895E274286C88D9C75ED5CA1B1B39528D70(L_1, L_4, NULL);
-		// objetMusic.Play();
-		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_5 = __this->___objetMusic_4;
-		NullCheck(L_5);
-		AudioSource_Play_m95DF07111C61D0E0F00257A00384D31531D590C3(L_5, NULL);
+		int32_t L_1 = 3;
+		AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* L_2 = (L_0)->GetAt(static_cast<il2cpp_array_size_t>(L_1));
+		RuntimeObject* L_3;
+		L_3 = MusicManager_ChangeMusic_m15031195B144DA14EA3CD35F2B023856E04B30A6(__this, L_2, NULL);
+		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_4;
+		L_4 = MonoBehaviour_StartCoroutine_m4CAFF732AA28CD3BDC5363B44A863575530EC812(__this, L_3, NULL);
 		// }
 		return;
 	}
@@ -8482,22 +8452,15 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MusicManager_Route4_mE047A122DC31BBB9E8C
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MusicManager_Route24Et25_mE0437982807DCE2AF2D5438772FE8A0EB7969FD9 (MusicManager_t50343E4230B62B127D8AA186232F1B8D0FF38FDC* __this, const RuntimeMethod* method) 
 {
 	{
-		// objetMusic.Stop();
-		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_0 = __this->___objetMusic_4;
+		// StartCoroutine(ChangeMusic(music[4]));
+		AudioClipU5BU5D_t916722468F7EDCFA833318C35CD7D41097D75D31* L_0 = __this->___music_5;
 		NullCheck(L_0);
-		AudioSource_Stop_m318F17F17A147C77FF6E0A5A7A6BE057DB90F537(L_0, NULL);
-		// objetMusic.clip = music[4];
-		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_1 = __this->___objetMusic_4;
-		AudioClipU5BU5D_t916722468F7EDCFA833318C35CD7D41097D75D31* L_2 = __this->___music_5;
-		NullCheck(L_2);
-		int32_t L_3 = 4;
-		AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* L_4 = (L_2)->GetAt(static_cast<il2cpp_array_size_t>(L_3));
-		NullCheck(L_1);
-		AudioSource_set_clip_mFF441895E274286C88D9C75ED5CA1B1B39528D70(L_1, L_4, NULL);
-		// objetMusic.Play();
-		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_5 = __this->___objetMusic_4;
-		NullCheck(L_5);
-		AudioSource_Play_m95DF07111C61D0E0F00257A00384D31531D590C3(L_5, NULL);
+		int32_t L_1 = 4;
+		AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* L_2 = (L_0)->GetAt(static_cast<il2cpp_array_size_t>(L_1));
+		RuntimeObject* L_3;
+		L_3 = MusicManager_ChangeMusic_m15031195B144DA14EA3CD35F2B023856E04B30A6(__this, L_2, NULL);
+		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_4;
+		L_4 = MonoBehaviour_StartCoroutine_m4CAFF732AA28CD3BDC5363B44A863575530EC812(__this, L_3, NULL);
 		// }
 		return;
 	}
@@ -8506,22 +8469,15 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MusicManager_Route24Et25_mE0437982807DCE
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MusicManager_Chenal_m5A6723AD50C25CB606D1F60E29BC3FC9CB690A8D (MusicManager_t50343E4230B62B127D8AA186232F1B8D0FF38FDC* __this, const RuntimeMethod* method) 
 {
 	{
-		// objetMusic.Stop();
-		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_0 = __this->___objetMusic_4;
+		// StartCoroutine(ChangeMusic(music[5]));
+		AudioClipU5BU5D_t916722468F7EDCFA833318C35CD7D41097D75D31* L_0 = __this->___music_5;
 		NullCheck(L_0);
-		AudioSource_Stop_m318F17F17A147C77FF6E0A5A7A6BE057DB90F537(L_0, NULL);
-		// objetMusic.clip = music[5];
-		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_1 = __this->___objetMusic_4;
-		AudioClipU5BU5D_t916722468F7EDCFA833318C35CD7D41097D75D31* L_2 = __this->___music_5;
-		NullCheck(L_2);
-		int32_t L_3 = 5;
-		AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* L_4 = (L_2)->GetAt(static_cast<il2cpp_array_size_t>(L_3));
-		NullCheck(L_1);
-		AudioSource_set_clip_mFF441895E274286C88D9C75ED5CA1B1B39528D70(L_1, L_4, NULL);
-		// objetMusic.Play();
-		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_5 = __this->___objetMusic_4;
-		NullCheck(L_5);
-		AudioSource_Play_m95DF07111C61D0E0F00257A00384D31531D590C3(L_5, NULL);
+		int32_t L_1 = 5;
+		AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* L_2 = (L_0)->GetAt(static_cast<il2cpp_array_size_t>(L_1));
+		RuntimeObject* L_3;
+		L_3 = MusicManager_ChangeMusic_m15031195B144DA14EA3CD35F2B023856E04B30A6(__this, L_2, NULL);
+		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_4;
+		L_4 = MonoBehaviour_StartCoroutine_m4CAFF732AA28CD3BDC5363B44A863575530EC812(__this, L_3, NULL);
 		// }
 		return;
 	}
@@ -8530,22 +8486,15 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MusicManager_Chenal_m5A6723AD50C25CB606D
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MusicManager_RouteVictoire_m976D5D7AFBDDA64F96E740B154AF9F026F0B157A (MusicManager_t50343E4230B62B127D8AA186232F1B8D0FF38FDC* __this, const RuntimeMethod* method) 
 {
 	{
-		// objetMusic.Stop();
-		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_0 = __this->___objetMusic_4;
+		// StartCoroutine(ChangeMusic(music[6]));
+		AudioClipU5BU5D_t916722468F7EDCFA833318C35CD7D41097D75D31* L_0 = __this->___music_5;
 		NullCheck(L_0);
-		AudioSource_Stop_m318F17F17A147C77FF6E0A5A7A6BE057DB90F537(L_0, NULL);
-		// objetMusic.clip = music[6];
-		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_1 = __this->___objetMusic_4;
-		AudioClipU5BU5D_t916722468F7EDCFA833318C35CD7D41097D75D31* L_2 = __this->___music_5;
-		NullCheck(L_2);
-		int32_t L_3 = 6;
-		AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* L_4 = (L_2)->GetAt(static_cast<il2cpp_array_size_t>(L_3));
-		NullCheck(L_1);
-		AudioSource_set_clip_mFF441895E274286C88D9C75ED5CA1B1B39528D70(L_1, L_4, NULL);
-		// objetMusic.Play();
-		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_5 = __this->___objetMusic_4;
-		NullCheck(L_5);
-		AudioSource_Play_m95DF07111C61D0E0F00257A00384D31531D590C3(L_5, NULL);
+		int32_t L_1 = 6;
+		AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* L_2 = (L_0)->GetAt(static_cast<il2cpp_array_size_t>(L_1));
+		RuntimeObject* L_3;
+		L_3 = MusicManager_ChangeMusic_m15031195B144DA14EA3CD35F2B023856E04B30A6(__this, L_2, NULL);
+		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_4;
+		L_4 = MonoBehaviour_StartCoroutine_m4CAFF732AA28CD3BDC5363B44A863575530EC812(__this, L_3, NULL);
 		// }
 		return;
 	}
@@ -8609,7 +8558,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CChangeMusicU3Ed__5_MoveNext_m9E5A93E3
 		int32_t L_3 = V_0;
 		if ((((int32_t)L_3) == ((int32_t)1)))
 		{
-			goto IL_0081;
+			goto IL_008c;
 		}
 	}
 	{
@@ -8628,7 +8577,7 @@ IL_0017:
 		L_6 = Object_op_Equality_mD3DB0D72CE0250C84033DC2A90AEF9D59896E536(L_5, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
 		if (L_6)
 		{
-			goto IL_004c;
+			goto IL_0049;
 		}
 	}
 	{
@@ -8646,11 +8595,11 @@ IL_0017:
 		L_12 = String_op_Inequality_m0FBE5AC4931D312E5B347BAA603755676E6DA2FE(L_8, L_11, NULL);
 		if (!L_12)
 		{
-			goto IL_00d6;
+			goto IL_0093;
 		}
 	}
 
-IL_004c:
+IL_0049:
 	{
 		// currentClip = currentClipIn;
 		MusicManager_t50343E4230B62B127D8AA186232F1B8D0FF38FDC* L_13 = V_1;
@@ -8658,21 +8607,25 @@ IL_004c:
 		NullCheck(L_13);
 		L_13->___currentClip_6 = L_14;
 		Il2CppCodeGenWriteBarrier((void**)(&L_13->___currentClip_6), (void*)L_14);
-		goto IL_0088;
-	}
-
-IL_005a:
-	{
-		// objetMusic.volume -= 0.0009f;
+		// objetMusic.Stop();
 		MusicManager_t50343E4230B62B127D8AA186232F1B8D0FF38FDC* L_15 = V_1;
 		NullCheck(L_15);
 		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_16 = L_15->___objetMusic_4;
-		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_17 = L_16;
+		NullCheck(L_16);
+		AudioSource_Stop_m318F17F17A147C77FF6E0A5A7A6BE057DB90F537(L_16, NULL);
+		// objetMusic.clip = currentClipIn;
+		MusicManager_t50343E4230B62B127D8AA186232F1B8D0FF38FDC* L_17 = V_1;
 		NullCheck(L_17);
-		float L_18;
-		L_18 = AudioSource_get_volume_m9CCF33BC636562EA282FDE07463B547D70134EE3(L_17, NULL);
-		NullCheck(L_17);
-		AudioSource_set_volume_mD902BBDBBDE0E3C148609BF3C05096148E90F2C0(L_17, ((float)il2cpp_codegen_subtract(L_18, (0.000899999985f))), NULL);
+		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_18 = L_17->___objetMusic_4;
+		AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* L_19 = __this->___currentClipIn_3;
+		NullCheck(L_18);
+		AudioSource_set_clip_mFF441895E274286C88D9C75ED5CA1B1B39528D70(L_18, L_19, NULL);
+		// objetMusic.Play();
+		MusicManager_t50343E4230B62B127D8AA186232F1B8D0FF38FDC* L_20 = V_1;
+		NullCheck(L_20);
+		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_21 = L_20->___objetMusic_4;
+		NullCheck(L_21);
+		AudioSource_Play_m95DF07111C61D0E0F00257A00384D31531D590C3(L_21, NULL);
 		// yield return null;
 		__this->___U3CU3E2__current_1 = NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CU3E2__current_1), (void*)NULL);
@@ -8680,54 +8633,12 @@ IL_005a:
 		return (bool)1;
 	}
 
-IL_0081:
+IL_008c:
 	{
 		__this->___U3CU3E1__state_0 = (-1);
 	}
 
-IL_0088:
-	{
-		// while (objetMusic.volume > 0.1)
-		MusicManager_t50343E4230B62B127D8AA186232F1B8D0FF38FDC* L_19 = V_1;
-		NullCheck(L_19);
-		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_20 = L_19->___objetMusic_4;
-		NullCheck(L_20);
-		float L_21;
-		L_21 = AudioSource_get_volume_m9CCF33BC636562EA282FDE07463B547D70134EE3(L_20, NULL);
-		if ((((double)((double)L_21)) > ((double)(0.10000000000000001))))
-		{
-			goto IL_005a;
-		}
-	}
-	{
-		// objetMusic.Stop();
-		MusicManager_t50343E4230B62B127D8AA186232F1B8D0FF38FDC* L_22 = V_1;
-		NullCheck(L_22);
-		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_23 = L_22->___objetMusic_4;
-		NullCheck(L_23);
-		AudioSource_Stop_m318F17F17A147C77FF6E0A5A7A6BE057DB90F537(L_23, NULL);
-		// objetMusic.clip = currentClipIn;
-		MusicManager_t50343E4230B62B127D8AA186232F1B8D0FF38FDC* L_24 = V_1;
-		NullCheck(L_24);
-		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_25 = L_24->___objetMusic_4;
-		AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* L_26 = __this->___currentClipIn_3;
-		NullCheck(L_25);
-		AudioSource_set_clip_mFF441895E274286C88D9C75ED5CA1B1B39528D70(L_25, L_26, NULL);
-		// objetMusic.volume = 1f;
-		MusicManager_t50343E4230B62B127D8AA186232F1B8D0FF38FDC* L_27 = V_1;
-		NullCheck(L_27);
-		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_28 = L_27->___objetMusic_4;
-		NullCheck(L_28);
-		AudioSource_set_volume_mD902BBDBBDE0E3C148609BF3C05096148E90F2C0(L_28, (1.0f), NULL);
-		// objetMusic.Play();
-		MusicManager_t50343E4230B62B127D8AA186232F1B8D0FF38FDC* L_29 = V_1;
-		NullCheck(L_29);
-		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_30 = L_29->___objetMusic_4;
-		NullCheck(L_30);
-		AudioSource_Play_m95DF07111C61D0E0F00257A00384D31531D590C3(L_30, NULL);
-	}
-
-IL_00d6:
+IL_0093:
 	{
 		// }
 		return (bool)0;
@@ -8804,7 +8715,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CNoMusicTransfertU3Ed__6_MoveNext_m0DA
 		int32_t L_3 = V_0;
 		if ((((int32_t)L_3) == ((int32_t)1)))
 		{
-			goto IL_0047;
+			goto IL_004c;
 		}
 	}
 	{
@@ -8814,21 +8725,23 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CNoMusicTransfertU3Ed__6_MoveNext_m0DA
 IL_0017:
 	{
 		__this->___U3CU3E1__state_0 = (-1);
-		goto IL_004e;
-	}
-
-IL_0020:
-	{
-		// objetMusic.volume -= 0.0009f;
+		// objetMusic.Stop();
 		MusicManager_t50343E4230B62B127D8AA186232F1B8D0FF38FDC* L_4 = V_1;
 		NullCheck(L_4);
 		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_5 = L_4->___objetMusic_4;
-		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_6 = L_5;
+		NullCheck(L_5);
+		AudioSource_Stop_m318F17F17A147C77FF6E0A5A7A6BE057DB90F537(L_5, NULL);
+		// objetMusic.clip = null;
+		MusicManager_t50343E4230B62B127D8AA186232F1B8D0FF38FDC* L_6 = V_1;
 		NullCheck(L_6);
-		float L_7;
-		L_7 = AudioSource_get_volume_m9CCF33BC636562EA282FDE07463B547D70134EE3(L_6, NULL);
-		NullCheck(L_6);
-		AudioSource_set_volume_mD902BBDBBDE0E3C148609BF3C05096148E90F2C0(L_6, ((float)il2cpp_codegen_subtract(L_7, (0.000899999985f))), NULL);
+		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_7 = L_6->___objetMusic_4;
+		NullCheck(L_7);
+		AudioSource_set_clip_mFF441895E274286C88D9C75ED5CA1B1B39528D70(L_7, (AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20*)NULL, NULL);
+		// currentClip = null;
+		MusicManager_t50343E4230B62B127D8AA186232F1B8D0FF38FDC* L_8 = V_1;
+		NullCheck(L_8);
+		L_8->___currentClip_6 = (AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20*)NULL;
+		Il2CppCodeGenWriteBarrier((void**)(&L_8->___currentClip_6), (void*)(AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20*)NULL);
 		// yield return null;
 		__this->___U3CU3E2__current_1 = NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CU3E2__current_1), (void*)NULL);
@@ -8836,43 +8749,9 @@ IL_0020:
 		return (bool)1;
 	}
 
-IL_0047:
+IL_004c:
 	{
 		__this->___U3CU3E1__state_0 = (-1);
-	}
-
-IL_004e:
-	{
-		// while (objetMusic.volume > 0.1)
-		MusicManager_t50343E4230B62B127D8AA186232F1B8D0FF38FDC* L_8 = V_1;
-		NullCheck(L_8);
-		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_9 = L_8->___objetMusic_4;
-		NullCheck(L_9);
-		float L_10;
-		L_10 = AudioSource_get_volume_m9CCF33BC636562EA282FDE07463B547D70134EE3(L_9, NULL);
-		if ((((double)((double)L_10)) > ((double)(0.10000000000000001))))
-		{
-			goto IL_0020;
-		}
-	}
-	{
-		// objetMusic.Stop();
-		MusicManager_t50343E4230B62B127D8AA186232F1B8D0FF38FDC* L_11 = V_1;
-		NullCheck(L_11);
-		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_12 = L_11->___objetMusic_4;
-		NullCheck(L_12);
-		AudioSource_Stop_m318F17F17A147C77FF6E0A5A7A6BE057DB90F537(L_12, NULL);
-		// objetMusic.clip = null;
-		MusicManager_t50343E4230B62B127D8AA186232F1B8D0FF38FDC* L_13 = V_1;
-		NullCheck(L_13);
-		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_14 = L_13->___objetMusic_4;
-		NullCheck(L_14);
-		AudioSource_set_clip_mFF441895E274286C88D9C75ED5CA1B1B39528D70(L_14, (AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20*)NULL, NULL);
-		// currentClip = null;
-		MusicManager_t50343E4230B62B127D8AA186232F1B8D0FF38FDC* L_15 = V_1;
-		NullCheck(L_15);
-		L_15->___currentClip_6 = (AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20*)NULL;
-		Il2CppCodeGenWriteBarrier((void**)(&L_15->___currentClip_6), (void*)(AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20*)NULL);
 		// }
 		return (bool)0;
 	}
